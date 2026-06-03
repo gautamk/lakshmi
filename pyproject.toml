@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lakshmi"
+dynamic = ["version", "readme"]
+authors = [
+    { name = "Sarvjeet Singh", email = "sarvjeet@gmail.com" },
+]
+description = "Investing library and command-line interface inspired by the Bogleheads philosophy"
+license = "MIT"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "click~=8.0",
+    "curl_cffi~=0.10",
+    "ibonds>=1.0.2,<2.0",
+    "numpy>=1.22,<3.0",
+    "pyxirr~=0.6",
+    "PyYAML>=5.4,<7.0",
+    "requests~=2.25",
+    "tabulate~=0.8",
+    "yfinance>=0.2.38,<2.0",
+]
+
+[project.scripts]
+lak = "lakshmi.lak:lak"
+
+[project.urls]
+Homepage = "https://github.com/sarvjeets/lakshmi"
+
+[dependency-groups]
+dev = [
+    "pre-commit",
+    "flake8",
+    "isort",
+]
+publish = [
+    "twine",
+    "build",
+]
+
+[tool.setuptools.packages.find]
+exclude = ["tests", "tests.*"]
+
+[tool.setuptools.dynamic]
+version = { attr = "lakshmi.constants.VERSION" }
+readme = { file = "README.md", content-type = "text/markdown" }
