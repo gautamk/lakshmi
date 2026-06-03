@@ -51,3 +51,23 @@ exclude = ["tests", "tests.*"]
 [tool.setuptools.dynamic]
 version = { attr = "lakshmi.constants.VERSION" }
 readme = { file = "README.md", content-type = "text/markdown" }
+# README.md uses absolute links so PyPI renders them correctly. The old setup.py
+# transformed relative links (](./  →  ](https://sarvjeets.github.io/lakshmi/)
+# and lak.md → lak.html) at build time; pyproject.toml has no equivalent hook.
+# If relative links in source are ever preferred again, the cleanest Option 1
+# approach is a thin custom build backend (build-backend-path = ["."]):
+#
+#   # _build_backend.py
+#   from setuptools.build_meta import *
+#   from setuptools.build_meta import build_wheel as _build_wheel
+#   import pathlib
+#
+#   def build_wheel(wheel_directory, config_settings=None, metadata_directory=None):
+#       p = pathlib.Path("README.md")
+#       src = p.read_text()
+#       p.write_text(src.replace("](./", "](https://sarvjeets.github.io/lakshmi/")
+#                      .replace("lak.md", "lak.html"))
+#       try:
+#           return _build_wheel(wheel_directory, config_settings, metadata_directory)
+#       finally:
+#           p.write_text(src)  # restore so the working tree stays clean
