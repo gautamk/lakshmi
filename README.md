@@ -4,7 +4,7 @@
 [![Downloads](https://pepy.tech/badge/lakshmi)](https://pepy.tech/project/lakshmi)
 [![Downloads](https://pepy.tech/badge/lakshmi/month)](https://pepy.tech/project/lakshmi)
 
-![Screenshot of lak in action](./docs/lak.png)
+![Screenshot of lak in action](https://sarvjeets.github.io/lakshmi/docs/lak.png)
 (Screenshot of the `lak` command in action)
 
 ## Background
@@ -65,8 +65,8 @@ pip install lakshmi
 
 ## Command-line interface
 
-For detailed help on the CLI, please see [lak user guide](./docs/lak.md).
-For tips and tricks, please refer to [Lakshmi Recipes](./docs/recipes.md).
+For detailed help on the CLI, please see [lak user guide](https://sarvjeets.github.io/lakshmi/docs/lak.html).
+For tips and tricks, please refer to [Lakshmi Recipes](https://sarvjeets.github.io/lakshmi/docs/recipes.md).
 
 The simplest way to use this project is via the `lak` command. To access the
 up to date help, run:
@@ -100,12 +100,12 @@ Commands:
 ```
 The following section gives a quick summary of how to create a new portfolio.
 For detailed help, please read
-[creating a portfolio](./docs/lak.md#creating-a-portfolio) section of the
-[lak user guide](./docs/lak.md).
+[creating a portfolio](https://sarvjeets.github.io/lakshmi/docs/lak.html#creating-a-portfolio) section of the
+[lak user guide](https://sarvjeets.github.io/lakshmi/docs/lak.html).
 
 A new portfolio can be created by either:
 
-1. Copying an [existing](./docs/portfolio.yaml)
+1. Copying an [existing](https://sarvjeets.github.io/lakshmi/docs/portfolio.yaml)
 portfolio file to ~/portfolio.yaml and editing it, OR
 2. Using the `lak` commands to create a new portfolio.
 
@@ -162,7 +162,7 @@ The `lakshmi` library can also be used directly. The modules and classes are
 well documented and there are numerous examples for using each method or class
 in the [tests](https://github.com/sarvjeets/lakshmi/tree/develop/tests)
 accompanying this package. The
-[example portfolio](./docs/portfolio.yaml) can be constructed and the asset
+[example portfolio](https://sarvjeets.github.io/lakshmi/docs/portfolio.yaml) can be constructed and the asset
 allocation, etc. can be printed by the following piece of python code:
 
 ```python
