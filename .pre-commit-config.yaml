@@ -34,7 +34,10 @@ repos:
     name: unittest
     entry: python -m unittest discover
     language: python
-    additional_dependencies: [click, curl_cffi, ibonds, pyxirr, PyYAML,
+    # Must be kept in sync with [project.dependencies] in pyproject.toml.
+    # `additional_dependencies: [.]` would be cleaner but doesn't work for
+    # repo: local hooks — the hook env ends up with no runtime deps installed.
+    additional_dependencies: [click, curl_cffi, ibonds, numpy, pyxirr, PyYAML,
                               requests, tabulate, yfinance]
     types: [python]
     pass_filenames: false

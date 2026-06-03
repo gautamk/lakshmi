@@ -217,25 +217,17 @@ $ cd lakshmi
 # All development is done on the 'develop' branch
 $ git checkout develop
 
-# Setting up a virtual environment is strongly recommended. Install virtualenv
-# by one of the following:
-# pip install virtualenv --user  # If you have pip installed
-# sudo apt-get install python-virtualenv # Ubuntu
-# sudo pacman -S python-virtualenv  # Arch linux
-$ virtualenv venv
-# Activate the virtual environment
-$ source venv/bin/activate
-
-# Install all the dependencies
-$ pip install -r requirements.txt
+# Install uv if you don't have it: https://docs.astral.sh/uv/getting-started/installation/
+# Install all dependencies (creates a virtual environment automatically)
+$ uv sync --group dev
 
 # Run unittests
-$ python -m unittest
+$ uv run python -m unittest
 
 # Install pre-commit hooks to run it automatically on commits
-$ pre-commit install
+$ uv run pre-commit install
 # Run pre-commit manually
-$ pre-commit run --all-files
+$ uv run pre-commit run --all-files
 
 # Create your own bug or feature branch and start developing. Remember to
 # run tests (and add them when necessary) and pre-commit hooks on changes.
